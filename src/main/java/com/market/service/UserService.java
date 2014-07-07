@@ -1,8 +1,6 @@
 package com.market.service;
 
-import com.market.dao.UserDao;
 import com.market.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -13,8 +11,12 @@ public interface UserService {
 
     public void addUser(User user);
     public User getUser(Long id);
+    public User getUser(String username);
     public void updateUser(User user);
     public void deleteUser(Long id);
     public List<User> getUsers();
+    public User loadAuthenticatedUser();
+    public boolean isUserExist(String username);
+
 
 }

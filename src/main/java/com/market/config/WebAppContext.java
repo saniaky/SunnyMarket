@@ -5,21 +5,18 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
-import org.springframework.core.Ordered;
 import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.*;
-import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesView;
-
-import java.util.Properties;
 
 
 /**
@@ -28,7 +25,7 @@ import java.util.Properties;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan("com.market")
+@ComponentScan(basePackages = {"com.market.controller", "com.market.service", "com.market.dto"})
 @Import({PersistanceContext.class, SecurityContext.class})
 public class WebAppContext extends WebMvcConfigurerAdapter {
 
@@ -86,33 +83,12 @@ public class WebAppContext extends WebMvcConfigurerAdapter {
         return messageSource;
     }
 
-//    @Bean
-//    public SimpleMappingExceptionResolver exceptionResolver() {
-//        SimpleMappingExceptionResolver exceptionResolver = new SimpleMappingExceptionResolver();
-//
-//        Properties exceptionMappings = new Properties();
-//
-////        exceptionMappings.put("net.petrikainulainen.spring.testmvc.todo.exception.TodoNotFoundException", "error/404");
-//        exceptionMappings.put("java.lang.Exception", "error/error");
-//        exceptionMappings.put("java.lang.RuntimeException", "error/error");
-//
-//        exceptionResolver.setExceptionMappings(exceptionMappings);
-//
-//        Properties statusCodes = new Properties();
-//
-//        statusCodes.put("error/404", "404");
-//        statusCodes.put("error/error", "500");
-//
-//        exceptionResolver.setStatusCodes(statusCodes);
-//
-//        return exceptionResolver;
-//    }
-//
-//    @Override
-//    public void addViewControllers(ViewControllerRegistry registry) {
-//        registry.addViewController("/login").setViewName("login");
-//        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
-//    }
-
+    @Bean
+    public MultipartResolver multipartResolver() {
+        CommonsMultipartResolver resolver = new CommonsMultipartResolver();
+        resolver.setMaxUploadSize(20 * 1024 * 1024); // 20 MB
+        resolver.setMaxInMemorySize(1 * 1024); // 1MB
+        return resolver;
+    }
 
 }

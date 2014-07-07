@@ -9,3 +9,4 @@
 <script src="<c:url value="/assets/js/jquery-2.1.1.min.js"/>"></script>
 <script src="<c:url value="/assets/js/bootstrap.min.js"/>"></script>
 <script src="<c:url value="/assets/js/main.js"/>"></script>
+<script src="<c:url value="/assets/components/growl/bootstrap-growl.min.js"/>"></script>

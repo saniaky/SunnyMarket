@@ -1,5 +1,6 @@
 package com.market.config;
 
+import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -26,6 +27,7 @@ public class MarketConfig implements WebApplicationInitializer {
         ServletRegistration.Dynamic dispatcher = servletContext.addServlet(DISPATCHER_SERVLET_NAME, new DispatcherServlet(rootContext));
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping(DISPATCHER_SERVLET_MAPPING);
+//        dispatcher.setMultipartConfig(new MultipartConfigElement("/tmp", 5*1024*1024, 1024*1024*5*5, 1024*1024));
 
         EnumSet<DispatcherType> dispatcherTypes = EnumSet.of(DispatcherType.REQUEST, DispatcherType.FORWARD);
 
@@ -36,12 +38,13 @@ public class MarketConfig implements WebApplicationInitializer {
         FilterRegistration.Dynamic characterEncoding = servletContext.addFilter("characterEncoding", characterEncodingFilter);
         characterEncoding.addMappingForUrlPatterns(dispatcherTypes, true, "/*");
 
-        FilterRegistration.Dynamic securityFilterChain = servletContext.addFilter("springSecurityFilterChain", new DelegatingFilterProxy("springSecurityFilterChain"));
-        securityFilterChain.addMappingForUrlPatterns(dispatcherTypes, false, "/*");
+        FilterRegistration.Dynamic securityFilterChain = servletContext.addFilter("springSecurityFilterChain", new DelegatingFilterProxy());
+        securityFilterChain.addMappingForUrlPatterns(dispatcherTypes, true, "/*");
+
+        FilterRegistration.Dynamic openSessionInViewFilter = servletContext.addFilter("OpenEntityManagerInViewFilter", new OpenEntityManagerInViewFilter());
+        openSessionInViewFilter.addMappingForUrlPatterns(dispatcherTypes, true, "/*");
 
         servletContext.addListener(new ContextLoaderListener(rootContext));
-
-        System.out.println("onStartup called");
     }
 
 }

@@ -19,7 +19,6 @@
 <tiles:insertAttribute name="body"/>
 <tiles:insertAttribute name="footer"/>
 
-<script type="text/javascript" src="/assets/js/jquery-2.1.1.min.js"></script>
 <tilesx:useAttribute id="list" name="jsList" classname="java.util.List" ignore="true" />
 <c:forEach var="item" items="${list}">
     <script type="text/javascript" src="${item}"></script>

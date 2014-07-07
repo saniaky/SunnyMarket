@@ -22,6 +22,7 @@ body{
     border:none;
     font-weight:300;
     font-size:24px;
+    text-align: center;
 }
 .auth .auth-box{
     background-color:#fff;
@@ -47,156 +48,27 @@ body{
         margin:0 10px;
     }
 }
-
-/*.auth .auth-box input::-webkit-input-placeholder { *//* WebKit browsers */
-    /*color:    #fff;*/
-    /*font-weight:300;*/
-/*}*/
-/*.auth .auth-box input:-moz-placeholder { *//* Mozilla Firefox 4 to 18 */
-    /*color:    #fff;*/
-    /*font-weight:300;*/
-/*}*/
-/*.auth .auth-box input::-moz-placeholder { *//* Mozilla Firefox 19+ */
-    /*color:    #fff;*/
-    /*font-weight:300;*/
-/*}*/
-/*.auth .auth-box input:-ms-input-placeholder { *//* Internet Explorer 10+ */
-    /*color:    #fff;*/
-    /*font-weight:300;*/
-/*}*/
-/*.auth span.input-group-addon,*/
-/*.input-group-btn button{*/
-    /*border:none;*/
-    /*background: #fff!important;*/
-    /*color:#000!important;*/
-/*}*/
-/*.auth form{*/
-    /*font-weight:300!important;*/
-/*}*/
-/*.auth form input[type="text"],*/
-/*.auth form input[type="password"],*/
-/*.auth form input[type="email"],*/
-/*.auth form input[type="search"]{*/
-    /*border:none;*/
-    /*padding:10px 0 10px 0;*/
-    /*background: rgba(255, 255, 255, 0) !important;*/
-    /*color:#fff;*/
-    /*font-size:16px;*/
-    /*border-bottom:1px dotted #fff;*/
-    /*border-radius:0;*/
-    /*box-shadow:none!important;*/
-    /*height:auto;*/
-/*}*/
-/*.auth textarea{*/
-    /*background-color: rgba(255, 255, 255, 0)!important;*/
-    /*color:#fff!important;*/
-/*}*/
-/*.auth input[type="file"] {*/
-    /*color:#fff;*/
-/*}*/
-/*.auth form label{*/
-    /*color:#fff;*/
-    /*font-size:21px;*/
-    /*font-weight:300;*/
-/*}*/
-/*for radios & checkbox labels*/
-/*.auth .radio label,*/
-/*.auth label.radio-inline,*/
-/*.auth .checkbox label,*/
-/*.auth label.checkbox-inline{*/
-    /*font-size: 14px;*/
-/*}*/
-
-/*.auth form .help-block{*/
-    /*color:#fff;*/
-/*}*/
-/*.auth form select{*/
-    /*background: rgba(255, 255, 255, 0) !important;*/
-    /*color:#fff!important;*/
-    /*border-bottom:1px solid #fff!important;*/
-    /*border-radius:0;*/
-    /*box-shadow:none;*/
-/*}*/
-/*.auth form select option{*/
-    /*color:#000;*/
-/*}*/
-/*multiple select*/
-/*.auth select[multiple] option,*/
-/*.auth select[size] {*/
-    /*color:#fff!important;*/
-/*}*/
-
-/*Form buttons*/
-/*.auth form .btn{*/
-    /*background:none;*/
-    /*-webkit-transition: background 0.2s ease-in-out;*/
-    /*-moz-transition: background 0.2s ease-in-out;*/
-    /*-ms-transition: background 0.2s ease-in-out;*/
-    /*-o-transition: background 0.2s ease-in-out;*/
-    /*transition: background 0.2s ease-in-out;*/
-/*}*/
-/*.auth form .btn-default{*/
-    /*color:#fff;*/
-    /*border-color:#fff;*/
-/*}*/
-/*.auth form .btn-default:hover{*/
-    /*background:rgba(225, 225, 225, 0.3);*/
-    /*color:#fff;*/
-    /*border-color:#fff;*/
-/*}*/
-/*.auth form .btn-primary:hover{*/
-    /*background:rgba(66, 139, 202, 0.3);*/
-/*}*/
-/*.auth form .btn-success:hover{*/
-    /*background:rgba(92, 184, 92, 0.3);*/
-/*}*/
-/*.auth form .btn-info :hover{*/
-    /*background:rgba(91, 192, 222, 0.3);*/
-/*}*/
-/*.auth form .btn-warning:hover{*/
-    /*background:rgba(240, 173, 78, 0.3);*/
-/*}*/
-/*.auth form .btn-danger:hover{*/
-    /*background:rgba(217, 83, 79, 0.3);*/
-/*}*/
-/*.auth form .btn-link{*/
-    /*border:none;*/
-    /*color:#fff;*/
-    /*padding-left:0;*/
-/*}*/
-/*.auth form .btn-link:hover{*/
-    /*background:none;*/
-/*}*/
-
-
-/*.auth label.label-floatlabel {*/
-    /*font-weight: 300;*/
-    /*font-size: 11px;*/
-    /*color:#fff;*/
-    /*left:0!important;*/
-    /*top: 1px!important;*/
-/*}*/
-
+.form-control { color: #ffffff; }
 .float-label-control { position: relative; margin-bottom: 1.5em; }
 .float-label-control ::-webkit-input-placeholder { color: transparent; }
 .float-label-control :-moz-placeholder { color: transparent; }
 .float-label-control ::-moz-placeholder { color: transparent; }
 .float-label-control :-ms-input-placeholder { color: transparent; }
 .float-label-control input:-webkit-autofill,
-.float-label-control textarea:-webkit-autofill { background-color: transparent !important; -webkit-box-shadow: 0 0 0 1000px white inset !important; -moz-box-shadow: 0 0 0 1000px white inset !important; box-shadow: 0 0 0 1000px white inset !important; }
+.float-label-control textarea:-webkit-autofill { background-color: transparent !important; -webkit-box-shadow: 0 0 0 1000px #000000 inset !important; -moz-box-shadow: 0 0 0 1000px white inset !important; box-shadow: 0 0 0 1000px white inset !important; }
 .float-label-control input, .float-label-control textarea, .float-label-control label { font-size: 1.3em; box-shadow: none; -webkit-box-shadow: none; }
 .float-label-control input:focus,
 .float-label-control textarea:focus { box-shadow: none; -webkit-box-shadow: none; border-bottom-width: 2px; padding-bottom: 0; }
 .float-label-control textarea:focus { padding-bottom: 4px; }
-.float-label-control input, .float-label-control textarea { display: block; width: 100%; padding: 0.1em 0em 1px 0em; border: none; border-radius: 0px; border-bottom: 1px solid #aaa; outline: none; margin: 0px; background: none; }
+.float-label-control input, .float-label-control textarea { display: block; width: 100%; padding: 0.1em 0em 1px 0em; border: none; border-radius: 0px; border-bottom: 1px solid #ffffff; outline: none; margin: 0px; background: none; }
 .float-label-control textarea { padding: 0.1em 0em 5px 0em; }
-.float-label-control label { position: absolute; font-weight: normal; top: -1.0em; left: 0.08em; color: #aaaaaa; z-index: -1; font-size: 0.85em; -moz-animation: float-labels 300ms none ease-out; -webkit-animation: float-labels 300ms none ease-out; -o-animation: float-labels 300ms none ease-out; -ms-animation: float-labels 300ms none ease-out; -khtml-animation: float-labels 300ms none ease-out; animation: float-labels 300ms none ease-out; /* There is a bug sometimes pausing the animation. This avoids that.*/ animation-play-state: running !important; -webkit-animation-play-state: running !important; }
+.float-label-control label { position: absolute; font-weight: normal; top: -1.0em; left: 0.08em; color: #ffffff; z-index: -1; font-size: 0.85em; -moz-animation: float-labels 300ms none ease-out; -webkit-animation: float-labels 300ms none ease-out; -o-animation: float-labels 300ms none ease-out; -ms-animation: float-labels 300ms none ease-out; -khtml-animation: float-labels 300ms none ease-out; animation: float-labels 300ms none ease-out; /* There is a bug sometimes pausing the animation. This avoids that.*/ animation-play-state: running !important; -webkit-animation-play-state: running !important; }
 .float-label-control input.empty + label,
 .float-label-control textarea.empty + label { top: 0.1em; font-size: 1.5em; animation: none; -webkit-animation: none; }
 .float-label-control input:not(.empty) + label,
 .float-label-control textarea:not(.empty) + label { z-index: 1; }
-.float-label-control input:not(.empty):focus + label,
-.float-label-control textarea:not(.empty):focus + label { color: #aaaaaa; }
+/*.float-label-control input:not(.empty):focus + label,*/
+/*.float-label-control textarea:not(.empty):focus + label { color: #aaaaaa; }*/
 .float-label-control.label-bottom label { -moz-animation: float-labels-bottom 300ms none ease-out; -webkit-animation: float-labels-bottom 300ms none ease-out; -o-animation: float-labels-bottom 300ms none ease-out; -ms-animation: float-labels-bottom 300ms none ease-out; -khtml-animation: float-labels-bottom 300ms none ease-out; animation: float-labels-bottom 300ms none ease-out; }
 .float-label-control.label-bottom input:not(.empty) + label,
 .float-label-control.label-bottom textarea:not(.empty) + label { top: 3em; }

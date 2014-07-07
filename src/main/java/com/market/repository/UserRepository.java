@@ -3,6 +3,9 @@ package com.market.repository;
 import com.market.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * Created by saniaky on 6/29/14.
@@ -10,5 +13,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    public User findByUsername(String username);
+    User findByUsername(String username);
+
+    @Transactional(timeout = 10)
+    List<User> findAll();
+
 }

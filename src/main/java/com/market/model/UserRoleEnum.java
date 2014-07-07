@@ -9,7 +9,17 @@ public enum UserRoleEnum {
     USER,
     ANONYMOUS;
 
-    UserRoleEnum() {
+    @Override
+    public String toString() {
+        switch (this) {
+            case ADMIN:
+                return "ADMIN";
+            case USER:
+                return "USER";
+            case ANONYMOUS:
+                return "ANONYMOUS";
+            default:
+                return null;
+        }
     }
-
 }

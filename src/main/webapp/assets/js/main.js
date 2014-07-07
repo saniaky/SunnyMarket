@@ -11,10 +11,6 @@
     $(window).scroll(function(e) {
       return parallax();
     });
-    $('#input-rating').rating('refresh', {
-      showCaption: false
-    });
-    return console.log("hello world");
   });
 
 }).call(this);

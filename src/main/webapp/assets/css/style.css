@@ -36,16 +36,15 @@ body {
   margin: 0px;
 }
 
-
-.label {
-  font-size: 15px;
-}
-
 .tag-search {
   margin: 0 auto;
 float: none;
 margin-bottom: 30px;
 width: 300px;
+}
+
+.bootstrap-tagsinput {
+    width: 100%;
 }
 
 #footer {

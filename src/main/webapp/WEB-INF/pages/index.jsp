@@ -16,7 +16,6 @@
     <p class="lead">Public your service right now!</p>
 </div>
 
-
 <div class="container content">
     <div class="page-header">
         <h1><i class="fa fa-paragraph"></i><s:message code="message.ad.header"/> <small><s:message code="message.ad.subtext"/></small></h1>
@@ -124,8 +123,3 @@
     </div> <!-- row about tags -->
 
 </div> <!-- content -->
-<h2>Today is : ${today}</h2>
-
-<c:forEach items="${users}" var="user">
-    <p>${user.username} - ${user.password}</p>
-</c:forEach>

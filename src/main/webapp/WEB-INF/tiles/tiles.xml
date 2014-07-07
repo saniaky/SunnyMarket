@@ -19,31 +19,93 @@
     </definition>
 
     <definition name="login" extends="market.template">
-        <put-attribute name="menu" value=""/>
-        <put-attribute name="footer" value=""/>
         <put-attribute name="title" value="Please, sign in"/>
         <put-attribute name="body" value="/WEB-INF/pages/login.jsp"/>
-        <put-list-attribute name="cssList">
-            <add-attribute value="/assets/css/login.css"/>
-            <add-attribute value="/assets/css/jvfloat.css"/>
-        </put-list-attribute>
-        <put-list-attribute name="jsList">
-            <add-attribute value="/assets/js/jvfloat.min.js"/>
-            <add-attribute value="/assets/js/login.js"/>
-        </put-list-attribute>
+    </definition>
+
+    <definition name="signup" extends="market.template">
+        <put-attribute name="title" value="Sign up"/>
+        <put-attribute name="body" value="/WEB-INF/pages/signup.jsp"/>
     </definition>
 
     <definition name="profile" extends="market.template">
         <put-attribute name="title" value="Your profile page"/>
         <put-attribute name="body" value="/WEB-INF/pages/profile.jsp"/>
-        <put-list-attribute name="cssList">
-            <add-attribute value="/assets/components/rating-master/css/star-rating.min.css"/>
-        </put-list-attribute>
         <put-list-attribute name="jsList">
-            <add-attribute value="/assets/components/rating-master/js/star-rating.min.js"/>
+            <add-attribute value="/assets/js/vote.js"/>
         </put-list-attribute>
     </definition>
 
+    <definition name="ad" extends="market.template">
+        <put-attribute name="title" value="Ad"/>
+        <put-attribute name="body" value="/WEB-INF/pages/ad.jsp"/>
+        <put-list-attribute name="cssList">
+            <add-attribute value="/assets/components/lightSlider/css/lightSlider.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+            <add-attribute value="/assets/components/lightSlider/js/jquery.lightSlider.min.js"/>
+            <add-attribute value="/assets/js/ad.js"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="admin" extends="market.template">
+        <put-attribute name="title" value="Admin"/>
+        <put-attribute name="body" value="/WEB-INF/pages/admin.jsp"/>
+        <put-list-attribute name="jsList">
+            <add-attribute value="/assets/js/admin.js"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="user_edit" extends="market.template">
+        <put-attribute name="title" value="Edit user"/>
+        <put-attribute name="body" value="/WEB-INF/pages/user_edit.jsp"/>
+    </definition>
+
+    <definition name="ads" extends="market.template">
+        <put-attribute name="title" value="All ads"/>
+        <put-attribute name="body" value="/WEB-INF/pages/ads.jsp"/>
+    </definition>
+
+    <definition name="create_ad" extends="market.template">
+        <put-attribute name="title" value="Create ad"/>
+        <put-attribute name="body" value="/WEB-INF/pages/create_ad.jsp"/>
+        <put-list-attribute name="jsList">
+            <add-attribute value="/assets/components/froala-editor/js/froala_editor.min.js"/>
+            <add-attribute value="/assets/components/froala-editor/js/langs/ru.js"/>
+            <add-attribute value="/assets/components/bootstrap-tagsinput/bootstrap-tagsinput.min.js"/>
+            <add-attribute value="/assets/components/typeahead.js"/>
+            <add-attribute value="/assets/js/create_ad.js"/>
+        </put-list-attribute>
+        <put-list-attribute name="cssList">
+            <add-attribute value="/assets/components/froala-editor/css/froala_editor.min.css"/>
+            <add-attribute value="/assets/components/bootstrap-tagsinput/bootstrap-tagsinput.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="update_ad" extends="market.template">
+        <put-attribute name="title" value="Create ad"/>
+        <put-attribute name="body" value="/WEB-INF/pages/update_ad.jsp"/>
+        <put-list-attribute name="jsList">
+            <add-attribute value="/assets/components/froala-editor/js/froala_editor.min.js"/>
+            <add-attribute value="/assets/components/froala-editor/js/langs/ru.js"/>
+            <add-attribute value="/assets/components/bootstrap-tagsinput/bootstrap-tagsinput.min.js"/>
+            <add-attribute value="/assets/components/typeahead.js"/>
+            <add-attribute value="/assets/js/create_ad.js"/>
+        </put-list-attribute>
+        <put-list-attribute name="cssList">
+            <add-attribute value="/assets/components/froala-editor/css/froala_editor.min.css"/>
+            <add-attribute value="/assets/components/bootstrap-tagsinput/bootstrap-tagsinput.css"/>
+        </put-list-attribute>
+    </definition>
+
+    <definition name="users" extends="market.template">
+        <put-attribute name="title" value="User"/>
+        <put-attribute name="body" value="/WEB-INF/pages/users.jsp"/>
+    </definition>
+
+    <definition name="403" template="/WEB-INF/error/403.jsp">
+        <put-attribute name="body" value="access denied"/>
+    </definition>
 
 
 </tiles-definitions>

@@ -1,12 +1,15 @@
 package com.market.service;
 
-import com.market.dao.UserDao;
 import com.market.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.market.repository.UserRepository;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 /**
@@ -15,35 +18,66 @@ import java.util.List;
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    private UserDao userDao;
+    @Resource
+    private UserRepository userRepository;
 
     public UserServiceImpl() {
     }
 
     @Override
     public void addUser(User user) {
-        userDao.addUser(user);
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        user.setPassword(encoder.encode(user.getPassword()));
+        userRepository.save(user);
     }
 
     @Override
     public User getUser(Long id) {
-        return userDao.getUser(id);
+        return userRepository.getOne(id);
     }
 
     @Override
+    @Transactional
+    public User getUser(String username) {
+        return userRepository.findByUsername(username);
+    }
+
+    @Override
+    @Transactional
     public void updateUser(User user) {
-        User userToUpdate = userDao.getUser(user.getId());
-        userDao.updateUser(userToUpdate);
+        userRepository.save(user);
     }
 
     @Override
+    @Transactional
     public void deleteUser(Long id) {
-        userDao.deleteUser(id);
+        userRepository.delete(id);
     }
 
     @Override
     public List<User> getUsers() {
-        return userDao.getUsers();
+        return userRepository.findAll();
+    }
+
+
+    @Override
+    public User loadAuthenticatedUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return null;
+        }
+        Object principal = authentication.getPrincipal();
+        if (principal instanceof UserDetails) {
+            String user = ((UserDetails) principal).getUsername();
+            return getUser(user);
+        }
+        return null;
+    }
+
+    @Override
+    public boolean isUserExist(String username) {
+        User user = getUser(username);
+        return (user == null) ? false : true;
+
     }
 }

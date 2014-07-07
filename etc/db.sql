@@ -3,7 +3,7 @@ BEGIN;
 CREATE TABLE `users` (
   `id` INT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
   `username` varchar(100) UNIQUE NOT NULL,
-  `password` char(40),
+  `password` char(60),
   `role` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY (`username`)
